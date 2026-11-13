@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <title>Administrador de Novedades</title>
+ <style>
+ body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 30px; }
+ .container { background: white; padding: 25px; border-radius: 8px; max-width: 900px; margin: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+ .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+ .btn-nuevo { background-color: #28a745; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; font-weight: bold; }
+ table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+ th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+ th { background-color: #007bff; color: white; }
+ tr:nth-child(even) { background-color: #f9f9f9; }
+ .logout { color: #dc3545; text-decoration: none; font-weight: bold; float: right; }
+ </style>
+</head>
+<body>
+ <div class="container">
+ <a href="/login/logout" class="logout">Cerrar Sesión</a>
+ <div class="header">
+ <h2>Listado de Novedades</h2>
+ <a href="/admin/novedades/agregar" class="btn-nuevo">+ Nuevo</a>
+ </div>
+ <table>
+ <thead>
+ <tr>
+ <th>#</th>
+ <th>Título</th>
+ <th>Subtítulo</th>
+ </tr>
+ </thead>
+ <tbody>
+ {{#each novedades}}
+ <tr>
+ <td>{{id}}</td>
+ <td>{{titulo}}</td>
+ <td>{{subtitulo}}</td>
+ </tr>
+ {{/each}}
+ </tbody>
+ </table>
+ </div>
+</body>
+</html>
